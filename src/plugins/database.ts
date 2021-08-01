@@ -17,7 +17,7 @@ export default {
       username: sqlConfig.username,
       password: sqlConfig.password,
       database: sqlConfig.database,
-      // synchronize: sqlConfig.init,
+      synchronize: true,
       cache: process.env.NODE_ENV === 'production',
       entities: ['src/entity/*{.js,.ts}'],
     });
