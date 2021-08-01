@@ -17,9 +17,6 @@ const {
   SQL_DATABASE,
   SQL_SERVER,
   SQL_INIT,
-  OKTA_ORG_URL,
-  OKTA_CLIENT_ID,
-  OKTA_CLIENT_SECRET,
 } = process.env;
 
 // validate the required configuration information
@@ -34,10 +31,6 @@ assert(SQL_USER, 'SQL_USER configuration is required.');
 assert(SQL_PASSWORD, 'SQL_PASSWORD configuration is required.');
 assert(SQL_DATABASE, 'SQL_DATABASE configuration is required.');
 assert(SQL_SERVER, 'SQL_SERVER configuration is required.');
-
-assert(OKTA_ORG_URL, 'OKTA_ORG_URL configuration is required.');
-assert(OKTA_CLIENT_ID, 'OKTA_CLIENT_ID configuration is required.');
-assert(OKTA_CLIENT_SECRET, 'OKTA_CLIENT_SECRET configuration is required.');
 
 export type SqlConfig = {
     port: number;
@@ -56,11 +49,6 @@ export type Config = {
     url: string;
     cookiePwd: string;
     sql: SqlConfig,
-    okta: {
-        url: string;
-        clientId: string;
-        clientSecret: string;
-    },
 }
 
 // export the configuration information
@@ -78,10 +66,5 @@ export default {
     database: SQL_DATABASE,
     server: SQL_SERVER,
     init: SQL_INIT === 'true',
-  },
-  okta: {
-    url: OKTA_ORG_URL,
-    clientId: OKTA_CLIENT_ID,
-    clientSecret: OKTA_CLIENT_SECRET,
   },
 };
